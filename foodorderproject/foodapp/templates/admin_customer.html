@@ -1,0 +1,47 @@
+
+{% extends 'admin_layout.html' %}
+
+{% block title %}Customers List{% endblock %}
+
+{% block navbar  %}
+<li><a href="{%  url 'adminprofile' %}">Profile</a></li>
+<a  href="{%  url 'admin_index' %}" class="btn-book-a-table" href="#">Log Out</a>
+      
+{% endblock %}
+
+
+{% block content %}
+<div class="container" data-aos="fade-up">
+    <h3>Customers List</h3>
+    
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile Number</th>
+          </tr>
+        </thead>
+        {% for c in cstmr %}
+        <tbody>
+            
+          <tr>
+            <td>{{c.c_name}}</td>
+            <td>{{c.c_username}}</td>
+            <td>{{c.c_email}}</td>
+            <td>{{c.c_mobileNumber}}</td>
+          </tr>
+          
+        </tbody>
+        {% endfor %}
+      </table>
+    
+    
+    
+</div>
+{% endblock %}
+    
+
+

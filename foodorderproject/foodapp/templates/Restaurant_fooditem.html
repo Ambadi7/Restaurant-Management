@@ -1,0 +1,44 @@
+{% extends 'Restaurant_layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block navbar  %}
+<li><a href="{%  url 'res_profile' %}">Profile</a></li>
+<a href="/Restaurant_index/" class="btn-book-a-table" href="#">Log Out</a>
+{% endblock %}
+
+
+{% block content %}
+<div class="container" data-aos="fade-up">
+    
+    <h3>Food-Items</h3>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Food Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        {% for fi in fooditems %}
+        <tbody>
+          <tr>
+            <td><img src="/media/{{fi.image}}"  width="50" height="60"></td>
+            <td>{{fi.food_name}}</td>
+            <td>{{fi.category}}</td>
+            <td>{{fi.quantity}}</td>
+            <td>{{fi.price}}</td>
+            <td><a href="/resfood_edit/{{fi.id}}" type="button" class="btn btn-primary">Edit</a></td>
+          </tr>
+          
+        </tbody>
+        {% endfor %}
+      </table>
+</div>
+{% endblock %}
+    
+
+

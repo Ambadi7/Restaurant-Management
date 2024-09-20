@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers delete by name</title>
+</head>
+<body>
+    <h4>delete by name</h4>
+    <form action="/Customer_deleteByName/" method="POST">
+        {% csrf_token %}
+        <span>Enter Your username to delete</span>
+        <input type="text" name="username" placeholder="enter your username">
+        <button value="submit">Delete</button>
+    </form>
+</body>
+</html>

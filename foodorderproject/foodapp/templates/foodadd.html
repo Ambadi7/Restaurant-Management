@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="//" method="POST">
+        {% csrf_token %}
+        <span>Enter Your Food id</span>
+        <input type="text" placeholder="Food Id" name="foodid">
+        <br><br>
+        <span>Enter Your Food Name</span>
+        <input type="text" placeholder="fname" name="fname">
+        <br><br>
+    
+        <span>Enter Your Description</span>
+        <input type="textarea" placeholder="description" name="description">
+        <br><br>
+        <span>Enter Category</span>
+        <input type="text" placeholder="Category" name="category">
+        <br><br>
+        <span>Enter Quantity</span>
+        <input type="text" placeholder="Quantity" name="Quantity">
+        <br><br>
+        <span>Enter Price</span>
+        <input type="number" placeholder="Price" name="price">
+        <br><br>
+        <span>Pick a image</span>
+        <input type="image" placeholder="image" name="image">
+        <br><br>
+        <button type="submit">Register</button>
+        
+        <input type="reset" value="Reset">
+
+    
+    </form>
+</body>
+</html>

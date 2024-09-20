@@ -1,0 +1,48 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Restaurant Staff{% endblock %}
+
+{% block navbar  %}
+<li><a href="{%  url 'adminprofile' %}">Profile</a></li>
+<a href="/admin_index/" class="btn-book-a-table" href="#">Log Out</a>
+      
+{% endblock %}
+
+
+{% block content %}
+<div class="container" data-aos="fade-up">
+    <h3>Restaurant Staff's</h3>
+    <button type="button" class="btn btn-primary">Add New a Staff</button>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile Number</th>
+          </tr>
+        </thead>
+        {% for rs in r_staff %}
+        <tbody>
+          <tr>
+            <td>{{rs.rs_name}}</td>
+            <td>{{rs.rs_username}}</td>
+            <td>{{rs.rs_email}}</td>
+            <td>{{rs.rs_mobileNumber}}</td>
+            <td><button type="button" class="btn btn-primary">Edit Profile</button></td>
+            <td><a href="/adminstaff_delete/{{rs.id}}" type="button" class="btn btn-danger">Delete</a></td>
+
+          </tr>
+          
+        </tbody>
+        {% endfor %}
+      </table>
+    
+    
+    
+</div>
+{% endblock %}
+    
+
+

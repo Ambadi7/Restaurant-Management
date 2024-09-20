@@ -1,0 +1,49 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Food-Items{% endblock %}
+
+{% block navbar  %}
+<li><a href="{%  url 'adminprofile' %}">Profile</a></li>
+<a href="{%  url 'admin_index' %}" class="btn-book-a-table" href="#">Log Out</a>
+      
+{% endblock %}
+
+
+{% block content %}
+<div class="container" data-aos="fade-up">
+    <h3>Food-Items</h3>
+    <a href="{%  url 'admin_foodadd' %}" type="button" class="btn btn-primary">Add New Food-Item</a>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Food Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        {% for fi in fooditems %}
+        <tbody>
+          <tr>
+            <td><img src="/media/{{fi.image}}"  width="50" height="60"></td>
+            <td>{{fi.food_name}}</td>
+            <td>{{fi.category}}</td>
+            <td>{{fi.quantity}}</td>
+            <td>{{fi.price}}</td>
+            <td><a href="/adminfood_edit/{{fi.id}}"><button  type="button" class="btn btn-primary">Edit</button></a></td>
+            <td><a href="/adminfood_delete/{{fi.id}}" type="button" class="btn btn-danger">Delete</a></td>
+          </tr>
+          
+        </tbody>
+        {% endfor %}
+      </table>
+    
+    
+    
+</div>
+{% endblock %}
+    
+
+

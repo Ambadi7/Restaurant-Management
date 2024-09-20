@@ -1,0 +1,74 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Food-Items{% endblock %}
+
+{% block navbar  %}
+<li><a href="{%  url 'adminprofile' %}">Profile</a></li>
+<a  href="{%  url 'admin_index' %}" class="btn-book-a-table" href="#">Log Out</a>
+      
+{% endblock %}
+
+
+{% block content %}
+<div class="container" data-aos="fade-up">
+    <h3>Food-Items</h3>
+
+    <h4>Completed Orders</h4>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Food Name</th>
+            <th scope="col">status</th>
+            <th scope="col">Category</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        {% for o in c_orders %}
+        <tbody>
+          <tr>
+            <td>{{o.username}}</td>
+            <td>{{o.food_name}}</td>
+            <td>{{o.status}}</td>
+            <td>{{o.category}}</td>
+            <td>{{o.quantity}}</td>
+            <td>{{o.price}}</td>
+          </tr>
+          
+        </tbody>
+        {% endfor %}
+        
+
+      </table>
+      <h4>Pending Orders</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Food Name</th>
+            <th scope="col">status</th>
+            <th scope="col">Category</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+      
+        {% for o in o_orders %}
+        <tbody>
+          <tr>
+            <td>{{o.username}}</td>
+            <td>{{o.food_name}}</td>
+            <td>{{o.status}}</td>
+            <td>{{o.category}}</td>
+            <td>{{o.quantity}}</td>
+            <td>{{o.price}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}
+    
+
+

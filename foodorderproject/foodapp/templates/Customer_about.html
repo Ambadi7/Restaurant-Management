@@ -1,0 +1,30 @@
+{% extends 'Customer_layout.html' %}
+
+{% block title %}About Us{% endblock %}
+
+{% block navbar  %}
+<li><a href="/profile">Profile</a></li>
+<a class="btn-book-a-table" href="{%  url 'Customer_logout' %}">Log Out</a>
+{% endblock %}
+
+{% block sidebar %}
+<h2>Hi {{uname}}</h2>
+
+<ol>
+  <li><a href="{%  url 'Customer_home' %}">Home</a></li>
+  <li>About</li>
+</ol>
+{% endblock %}
+
+
+{% block content %}
+<div class="container" data-aos="fade-up">
+    <p class="fst-italic">Welcome to Yummy, your ultimate destination for convenient and delicious dining experiences. At Yummy, we're passionate about connecting food lovers with a diverse range of culinary delights, right at their fingertips.With an extensive network of top-rated restaurants, cafes, and eateries, we've curated a platform that offers unparalleled convenience and variety. Whether you're craving comforting classics, exotic cuisines, or healthy alternatives, our platform ensures that you can explore and indulge in a world of flavors, all from the comfort of your home or office.Driven by a commitment to excellence, we prioritize quality, reliability, and customer satisfaction in everything we do. From seamless ordering processes to prompt delivery, we strive to exceed your expectations at every step of your culinary journey.Join us in celebrating the joy of good food and effortless dining experiences. Discover new favorites, indulge in old classics, and embark on a gastronomic adventure with Yummy.Let your cravings lead the way, and let us handle the rest. Welcome to Yummy, where every meal is a celebration of flavor and convenience.</p>
+    
+    
+    
+</div>
+{% endblock %}
+    
+
+

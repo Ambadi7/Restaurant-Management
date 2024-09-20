@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers List</title>
+</head>
+<body>
+    <h3>Customers List</h3>
+    <table border="2" style="border: groove 1px rgb(0, 0, 0);">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Address</th>
+            <th>Delete</th>
+        </tr>
+        {% for Customer in Customers %}
+        <tr>
+            <td>{{ Customer.c_name }}</td>
+            <td>{{ Customer.c_age }}</td>
+            <td>{{ Customer.c_email }}</td>
+            <td>{{ Customer.c_mobileNumber }}</td>
+            <td>{{ Customer.c_username }}</td>
+            <td>{{ Customer.c_password }}</td>
+            <td>{{ Customer.c_address }}</td>
+            <td><button><a href="/Customer_delete/{{Customer.id}}">Delete</a></button></td>
+
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

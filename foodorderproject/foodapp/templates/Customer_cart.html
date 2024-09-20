@@ -1,0 +1,49 @@
+{% extends 'Customer_layout.html' %}
+
+{% block title %}My Cart List{% endblock %}
+
+{% block navbar  %}
+<li><a href="/profile">Profile</a></li>
+<a class="btn-book-a-table" href="{%  url 'Customer_logout' %}">Log Out</a>
+{% endblock %}
+
+{% block sidebar %}
+<h2>Hi {{uname}}</h2>
+
+<ol>
+  <li><a href="{%  url 'Customer_home' %}">Home</a></li>
+  <li>Cart List</li>
+</ol>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container" data-aos="fade-up">
+    <p>Cart List</p>
+    
+    
+    <div class="row gy-5">
+               
+      {% for f in carts %}
+          <div class="col-lg-4 menu-item">
+            <div class="card" style="width: 18rem;">
+                <img src="/media/{{f.image}}"  height="120" width="90" class="card-img-top" alt="...">
+            
+                <div class="card-body">
+                <h5 class="card-title">{{f.product}}</h5>
+                <p class="card-text">Product quantity :{{f.quantity}}</p>
+                <p class="card-text">Product total price :{{f.total_price}}</p>
+                <p class="card-text">{{f.username}}</p>
+                <a href="/Customer_cartdelete/{{f.id}}" ><button class="btn btn-danger">Delete</button></a>
+                </div>
+            </div>
+          </div>
+      {% endfor %}
+      <a href="/payment/" class="btn btn-primary">Buy Now</a>
+    </div>
+</div>
+{% endblock %}
+    
+
+

@@ -1,0 +1,148 @@
+
+{% extends 'index_layout.html' %}
+{% load static %}
+{% block title %} Restaurant Staff{% endblock %}
+
+
+{% block user1 %}<a href="{%  url 'admin_index' %}">Admin</a>{% endblock %}
+{% block user2 %} <a href="{%  url 'Customer_index' %}">Customer</a>{% endblock %}
+
+
+
+{% block menu %} 
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <p>Eat<span>With Us!</span></p>
+        <P>RESTAURANT</P>
+      </div>
+
+      <ul class="nav nav-tabs d-flex justify-content" data-aos="fade-up" data-aos-delay="200">
+
+        <li class="nav-item">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-login">
+            <button type="button" class="btn btn-outline-dark">Login</button>
+          </a>
+        </li><!-- End tab nav item -->
+
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-signup">
+            <button type="button" class="btn btn-outline-primary">Sign Up</button>
+          </a><!-- End tab nav item -->
+        </li>
+
+
+      </ul>
+
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+
+        <div class="tab-pane fade active show" id="menu-login">
+
+          <div class="tab-header text-center">
+            
+            <h3>Login</h3>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 text-black">
+      
+              <div class="px-5 ms-xl-4">
+                <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
+                <span class="h1 fw-bold mb-0">Logo</span>
+              </div>
+      
+              <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+      
+                <form method="post" action="/Restaurantlogin/" style="width: 23rem;">
+                  {% csrf_token %}
+      
+                  <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+      
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example18">Username</label>
+                    <input type="text" id="form2Example18" class="form-control form-control-lg" name="username"/>
+                    
+                  </div>
+      
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example28">Password</label>
+                    <input type="password" id="form2Example28" class="form-control form-control-lg" name="password"/>
+                    
+                  </div>
+      
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-info btn-lg btn-block" type="submit">Login</button>
+                  </div>
+      
+                  <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+                  <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
+                  
+                </form>
+      
+              </div>
+      
+            </div>
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+              <img src="{% static 'assets/img/login.jpg' %}" 
+                alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+            </div>
+          </div>
+          
+        </div><!-- End Login Menu Content -->
+
+        <div class="tab-pane fade" id="menu-signup">
+
+          <div class="tab-header text-center">
+            <h3>Sign Up</h3>
+          </div>
+          <form action="/Restaurantreg/" method="POST">
+            {% csrf_token %}
+              <div class="form-group  row">
+                  <label for="inputuname" class="col-sm-2 col-form-label">Username</label>
+                  <div class="col-sm-10">
+                    <input type="text"  class="form-control" name="username"  id="inputuname" >
+                  </div>
+              </div>
+              <br>
+              <div class="form-group  row">
+                  <label for="inputName" class="col-sm-2 col-form-label">Staff's Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name" id="inputName" >
+                  </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email"  class="form-control" name="email" id="staticEmail" >
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                  <label for="inputmobileno" class="col-sm-2 col-form-label">Mobile Number</label>
+                  <div class="col-sm-10">
+                    <input type="tel" class="form-control"  name="mobileNumber" id="inputmobileno" >
+                  </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" name="password" id="inputPassword" >
+                </div>
+              </div>
+              <br>
+              
+              <br><br>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+  
+          </form>
+          
+        </div><!-- End Customer Sign Up and Login -->
+-
+      </div>
+
+    </div>
+
+    {% endblock %}
+
+   

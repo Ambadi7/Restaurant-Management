@@ -1,0 +1,36 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block navbar  %}
+<li><a href="{%  url 'adminprofile' %}">Profile</a></li>
+<a  href="{%  url 'admin_index' %}" class="btn-book-a-table" href="#">Log Out</a>
+      
+{% endblock %}
+
+
+{% block content %}
+<div class="container" data-aos="fade-up">
+    
+    <p>Admin</p>
+    
+    <div class="row ">
+       
+            {% for f in fooditems %}
+                <div class="card" style="width: 18rem;">
+                    <img src="/media/{{f.image}}"  height="120" width="90" class="card-img-top" alt="...">
+                
+                    <div class="card-body">
+                    <h5 class="card-title">{{f.food_name}}</h5>
+                    <p class="card-text">{{f.description}}</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            {% endfor %}
+       
+    </div>
+</div>
+{% endblock %}
+    
+
+

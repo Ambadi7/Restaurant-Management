@@ -1,0 +1,41 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Complaints{% endblock %}
+
+{% block navbar  %}
+<li><a href="{%  url 'adminprofile' %}">Profile</a></li>
+<a  href="{%  url 'admin_index' %}" class="btn-book-a-table" href="#">Log Out</a>
+      
+{% endblock %}
+
+
+{% block content %}
+<div class="container" data-aos="fade-up">
+    <h3>Complaints </h3>
+    
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name<br>Username</th>
+            <th scope="col">Complaints</th>
+          </tr>
+        </thead>
+        {% for cmp in complaints %}
+        <tbody>
+          <tr>
+            <td>{{cmp.c_name}}<br>{{cmp.c_username}}</td>
+            <td>{{cmp.c_complaint}}</td>
+          </tr>
+          
+        </tbody>
+        {% endfor %}
+      </table>
+    
+    
+    
+</div>
+{% endblock %}
+    
+
+

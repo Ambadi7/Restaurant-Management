@@ -1,0 +1,78 @@
+
+{% extends 'Customer_layout.html' %}
+
+
+           
+        {% block title %} Profile{% endblock %}
+
+        {% block sidebar %}
+          <h2> {{uname}}</h2>
+          
+          <ol>
+            <li><a href="{%  url 'Customer_home' %}">Home</a></li>
+            <li>Profile</li>
+          </ol>
+        {% endblock %}
+       
+        {% block content %}
+
+        <p>
+          You can edit your Profile you like!
+        </p>
+        <form action="/profileupdate/" method="POST">
+          {% csrf_token %}
+            <div class="form-group  row">
+                <label for="inputuname" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext"  id="inputuname" value="{{uname}}">
+                </div>
+            </div>
+            <br>
+            <div class="form-group  row">
+                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="name" id="inputName" value="{{c_name}}">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="inputAge" class="col-sm-2 col-form-label">Age</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" name="age" id="inputAge" value="{{c_age}}">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email"  class="form-control" name="email" id="staticEmail" value="{{c_email}}">
+              </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="inputmobileno" class="col-sm-2 col-form-label">Mobile Number</label>
+                <div class="col-sm-10">
+                  <input type="tel" class="form-control"  name="mobileNumber" id="inputmobileno" value="{{c_mobileNumber}}">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" id="inputPassword" value="{{c_password}}">
+              </div>
+            </div>
+            <br>
+            <!--<div class="form-group row">
+              <label for="address" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" name="address" id="address" rows="3">{{c_address}}</textarea>
+                </div>
+            </div> -->
+            <br><br>
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+
+        </form>
+
+        {% endblock %}
+  

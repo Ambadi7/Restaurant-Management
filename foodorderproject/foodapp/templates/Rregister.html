@@ -1,0 +1,45 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <title>Register</title>
+</head>
+<body>
+    <div class="reg">
+        <div class="reg-sub">
+            <h2>RRegister</h2>
+            <form action="//">
+                {% csrf_token %}
+                <span>Enter Your Resturant Name</span>
+                <input type="text" placeholder="Resturant Name">
+                <br><br>
+                <span>Enter Your Email</span>
+                <input type="email" placeholder="Email">
+                <br><br>
+                <span>Enter Your Mobile Phone</span>
+                <input type="number" placeholder="Mobile number">
+                <br><br>
+            
+                <span>Enter Your Username</span>
+                <input type="text" placeholder="Username">
+                <br><br>
+                <span>Enter Your Password</span>
+                <input type="password" placeholder="Password">
+                <br><br>
+                <span>Enter Your Address</span>
+                <input type="textarea" placeholder="Address">
+                <br><br>
+                <input type="button" value="Register">
+                <input type="reset" value="Reset">
+
+            
+            </form>
+        </div>
+    </div>
+</body>
+</html>
